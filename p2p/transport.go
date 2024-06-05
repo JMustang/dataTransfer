@@ -8,6 +8,7 @@ type Peer interface {
 // entre os nós da rede. Isto pode ser do
 // formulário (TCP, UDP, websockets, ...)
 type Transporte interface {
+	ListenAndAccept() error
 }
 
 // Network é a rede de nós.
