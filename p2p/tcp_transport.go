@@ -6,6 +6,16 @@ import (
 	"sync"
 )
 
+// TCPeer representa o nó remoto através de uma conexão TCP estabelecida
+type TCPPeer struct {
+	// conn é a conexão subjacente do peer
+	conn net.Conn
+
+	// se discarmos e recuperarmos uma conexão => outbound == true
+	// se aceitar e recuperar uma conexão => saída == falso
+	outbound bool
+}
+
 type TCPTransport struct {
 	listenAddress string
 	listener      net.Listener
